@@ -74,6 +74,15 @@ void PrintList(Node* head) {
 	std::cout << "\n";
 }
 
+void PrintListReverse(Node* head) {
+	Node* walker = head;
+	if(walker == NULL) {
+		return;
+	}
+	PrintListReverse(walker->next);
+	std::cout << walker->data << " ";
+}
+
 int main() {
 	Node* head = NULL; // initialize pointer to NULL
 	int x;
@@ -105,6 +114,8 @@ int main() {
 	PrintList(head2);
 
 	assert(head==ReverseListIterative(head2));
-	std::cout << "Assert true: The list is the same as the reversal of the reversed list.";
+	std::cout << "Assert true: The list is the same as the reversal of the reversed list." << std::endl;
+
+	PrintListReverse(head);
 
 }
