@@ -34,13 +34,35 @@ bool Search(BstNode* root, int y) {
 	else {return Search(root->right, y);}
 }
 
+int FindMin(BstNode* root) {
+	if(root == NULL) {
+		return -1;
+	}
+	while(root->left != NULL) {
+		root = root->left;
+	}
+	return root->data;
+}
+
+int FindHeight(BstNode* root) {
+	if(root == NULL) {
+		return -1;
+	}
+	int leftHeight = FindHeight(root->left);
+	int rightHeight = FindHeight(root->right);
+
+	return std::max(leftHeight, rightHeight) + 1;
+}
+
 
 int main() {
 	BstNode* root = NULL;
-	root = Insert(root, 5);
 	root = Insert(root, 15);
 	root = Insert(root, 10);
 	root = Insert(root, 20);
 	root = Insert(root, 25);
+	root = Insert(root, 5);
 	std::cout << Search(root, 25) << std::endl;
+	std::cout << FindMin(root) << std::endl;
+	std::cout << FindHeight(root) << std::endl;
 }
