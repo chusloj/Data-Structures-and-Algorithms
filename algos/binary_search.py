@@ -3,7 +3,7 @@ import math
 def BinarySearch(A, target):
 	
 	left = 0
-	right = len(A)
+	right = len(A) - 1
 	while left <= right:
 		mid = math.floor( (left + right) / 2 )
 		if A[mid] == target:
