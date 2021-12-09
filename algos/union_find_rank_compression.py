@@ -1,3 +1,5 @@
+# Assumes that nodes are numbered, not lettered or any other form.
+
 class PathNode:
 
 	def __init__(self, parent, rank):
