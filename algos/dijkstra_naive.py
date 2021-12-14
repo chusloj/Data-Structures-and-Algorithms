@@ -35,7 +35,6 @@ def Dijkstra_Naive(adj_matrix, source_node):
 				values[v] = values[min_node] + adj_matrix[min_node][v]
 				parents[v] = min_node
 
-	print(values)
 	Print_SSSP(values, parents, source_node)
 
 
