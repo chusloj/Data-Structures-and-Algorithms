@@ -16,13 +16,8 @@ def Create_Adj_List(adj_matrix):
 
 def Print_SSSP(values, parents, source_node):
 
-	for v in range(len(parents)):
+	for v in parents.keys():
 		if parents[v] != -1:
-			walker = v
-			cost = 0
-			while walker != source_node:
-				cost += values[walker]
-				walker = parents[walker]
 			print(f"{source_node} - {v}: {values[v]}")
 
 
